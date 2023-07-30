@@ -1,0 +1,465 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: wheat;
+    font-family: "Raleway", sans-serif;
+    transition: all 0.5s linear;
+}
+
+/* Signin and signup secton */
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 400px;
+    max-height: auto;
+    border: 1px solid orange;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #bdbdbd;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    background: linear-gradient(90deg, #F19D54, #F7BF81, #AA9387, #A16F5C 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cut-icon {
+    position: relative;
+    float: left;
+    padding-left: 20px;
+}
+
+.cut-icon a i {
+    font-size: 30px;
+    margin-right: 20px;
+    color: rgb(135 122 122);
+}
+
+.cut-icon a i:hover {
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container div form h1 {
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+}
+
+.name-field,
+.pass-field {
+    text-align: center;
+    padding-left: 0px;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    outline: none;
+    margin: 10px 15px;
+    border: 1px solid #1B6B93;
+    color: #1B6B93;
+    border-radius: 10px;
+}
+
+i {
+    font-size: 20px;
+    color: #1B6B93;
+}
+
+.remember-pass {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    margin-left: 80px;
+    padding-top: 5px;
+}
+
+.rem-me {
+    margin-left: 25px;
+}
+
+.signInOut-btn {
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid grey;
+    padding-top: 17px;
+}
+
+.signInOut-btn button {
+    outline: none;
+    width: 60%;
+    padding: 7px 20px;
+    border: 1px solid black;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 10px 0 0 0;
+    background: linear-gradient(45deg, #1B6B93, #97FEED);
+    transition: all 0.5s linear;
+}
+
+.account-toggle {
+    text-align: center;
+    transition: all 0.5s linear;
+}
+
+a {
+    text-decoration: none;
+}
+
+.transLeft {
+    transform: translateX(0);
+    transition: all 0.5s linear;
+}
+
+.transLeft.active {
+    transform: translateX(-400px);
+    display: none;
+    transition: all 0.5s linear;
+}
+
+.transRight {
+    display: none;
+    transform: translateX(400px);
+    transition: all 0.5s linear;
+}
+
+.transRight.active {
+    display: inline-block;
+    transform: translateX(0);
+    transition: all 0.5s linear;
+}
+
+/* Login option */
+.login-option {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 400px;
+    max-height: auto;
+    border: 1px solid orange;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #bdbdbd;
+    transition: .5s ease-in-out;
+    background: linear-gradient(45deg, #F19D54, #F7BF81, #FDF1D3, #AA9387, #A16F5C);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    /* display: none; */
+}
+
+.login-option.active {
+    display: inline-block;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.login-option .cut-icon {
+    text-align: left;
+}
+
+.head {
+    font-size: 30px;
+    border-bottom: 1px solid white;
+    padding-bottom: 30px;
+}
+
+.head h3 {
+    color: #1B6B93;
+}
+
+.btn1 {
+    padding-top: 20px;
+}
+
+.btn1>button {
+    padding: 10px 25px;
+    width: 180px;
+    border-radius: 30px;
+    color: black;
+    background: linear-gradient(45deg, #E9FFC2, #C3EDC0, #E8FFCE);
+    border: 1px solid black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn1>button:hover {
+    color: white;
+    background: linear-gradient(45deg, #DD58D6, #9336B4, #40128B);
+}
+
+.admin-btn {
+    margin-bottom: 20px;
+}
+
+.student-btn {
+    padding-bottom: 30px;
+    border-bottom: 1px solid white;
+}
+
+.end-para {
+    padding-top: 20px;
+}
+
+.cut-icon1 {
+    position: relative;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.cut-icon1 a i {
+    font-size: 30px;
+    margin-right: 20px;
+    color: rgb(135 122 122);
+}
+
+.cut-icon1 a i:hover {
+    color: black;
+}
+
+/* All Media Screen */
+@media screen and (max-width: 1000px) {
+    .login-option {
+        padding-top: 20px;
+        padding-bottom: 25px;
+        width: 350px;
+    }
+
+    .head {
+        font-size: 25px;
+        padding-bottom: 25px;
+    }
+
+    .btn1 {
+        padding-top: 15px;
+    }
+
+    .btn1>button {
+        padding: 7px 15px;
+        width: 140px;
+        font-size: 16px;
+    }
+
+    .admin-btn {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .student-btn {
+        padding-bottom: 25px;
+    }
+
+    .end-para {
+        padding-top: 20px;
+    }
+
+    .cut-icon a i {
+        font-size: 25px;
+    }
+
+    
+.container {
+    width: 350px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.container form h1 {
+    font-size: 25px;
+    margin: 20px;
+}
+
+input {
+    width: 65%;
+    padding: 8px;
+    margin: 10px 15px;
+}
+
+i {
+    font-size: 20px;
+    color: #1B6B93;
+}
+
+.signInOut-btn {
+    margin-bottom: 17px;
+    padding-bottom: 17px;
+    padding-top: 14px;
+}
+
+.signInOut-btn button {
+    outline: none;
+    width: 55%;
+    padding: 7px 17px;   
+    font-size: 16px;
+}
+
+}
+
+@media screen and (max-width: 750px) {
+    .login-option {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        width: 300px;
+    }
+    .head {
+        font-size: 25px;
+        padding-bottom: 25px;
+    }
+
+    .end-para {
+        padding-top: 10px;
+        font-size: 12px;
+    }
+
+    .cut-icon a i {
+        font-size: 20px;
+    }
+      
+.container {
+    width: 320px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.container form h1 {
+    font-size: 25px;
+    margin: 15px;
+}
+
+input {
+    width: 60%;
+    padding: 6px;
+    margin: 7px 12px;
+}
+
+i {
+    font-size: 17px;
+    color: #1B6B93;
+}
+.account-toggle{
+    font-size: 16px;
+}
+
+.signInOut-btn {
+    margin-bottom: 17px;
+    padding-bottom: 17px;
+    padding-top: 10px;
+}
+
+.signInOut-btn button {
+    outline: none;
+    width: 55%;
+    padding: 7px 17px;   
+    font-size: 16px;
+}
+    
+}
+
+@media screen and (max-width: 450px) {
+    .login-option {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        width: 250px;
+    }
+    .head {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    .btn1 {
+        padding-top: 10px;
+    }
+
+    .btn1>button {
+        padding: 5px 10px;
+        width: 120px;
+        font-size: 13px;
+    }
+
+    .admin-btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .student-btn {
+        padding-bottom: 20px;
+    }
+
+    .end-para {
+        padding-top: 20px;
+        font-size: 7px;
+    }
+    .account-toggle{
+        font-size: 14px;
+    }
+
+    .cut-icon a i {
+        font-size: 25px;
+    }
+    .container {
+        width: 300px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    
+    .container form h1 {
+        font-size: 22px;
+        margin: 12px;
+    }
+    
+    input {
+        width: 60%;
+        padding: 6px;
+        margin: 8px 8px;
+    }
+    
+    /* i {
+        font-size: 17px;
+        color: #1B6B93;
+    } */
+    
+    .signInOut-btn {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        padding-top: 0px;
+    }
+    
+    .signInOut-btn button {
+        outline: none;
+        width: 45%;
+        padding: 7px 17px;   
+        font-size: 14px;
+    }
+        
+
+
+}
